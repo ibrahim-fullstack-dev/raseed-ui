@@ -1,1 +1,35 @@
-<p>dashboard works!</p>
+<div class="dashboard-wrapper">
+  <section class="metrics-grid">
+    <app-metric-card
+      title="Sales Profit"
+      currentMonthValue="0.00%"
+      lastMonthValue="0"
+      [chartData]="salesProfitData"
+    >
+    </app-metric-card>
+
+    <app-metric-card
+      title="Sales"
+      currentMonthValue="0.00%"
+      lastMonthValue="0"
+      [chartData]="salesData"
+    >
+    </app-metric-card>
+
+    <app-metric-card
+      title="Bank Balance"
+      currentMonthValue="0.00%"
+      lastMonthValue="0"
+      [chartData]="bankData"
+    >
+    </app-metric-card>
+
+    <app-metric-card
+      title="Cash"
+      currentMonthValue="0.00%"
+      lastMonthValue="0"
+      [chartData]="cashData"
+    >
+    </app-metric-card>
+  </section>
+</div>

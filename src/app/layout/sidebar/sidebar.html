@@ -1,1 +1,22 @@
-<p>sidebar works!</p>
+<aside class="sidebar" aria-label="sidebar">
+  <div class="sidebar-brand">
+    <h2>Raseed</h2>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <li class="nav-item-wrapper">
+        <a
+          [routerLink]="[routes.dashboard]"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active-link"
+          class="nav-item"
+          title="Dashboard"
+        >
+          <lucide-icon name="layout-dashboard"></lucide-icon>
+          <span>Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
