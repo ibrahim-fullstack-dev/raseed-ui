@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<div class="dashboard-container">
+  <aside class="dashboard-sidebar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <div class="dashboard-main">
+    <header class="dashboard-navbar">
+      <app-navbar></app-navbar>
+    </header>
+
+    <main class="dashboard-content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="dashboard-footer">
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</div>
