@@ -1,9 +1,19 @@
 import { Component } from '@angular/core';
 import { MetricCard } from './components/metric-card/metric-card';
+import { InvoicesPaymentsChart } from './components/invoices-payments-chart/invoices-payments-chart';
+import { UrgentActions } from './components/urgent-actions/urgent-actions';
+import { AnalyticsBreakdown } from './components/analytics-breakdown/analytics-breakdown';
+import { AnalyticsCircleChart } from './components/analytics-circle-chart/analytics-circle-chart';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MetricCard],
+  imports: [
+    MetricCard,
+    InvoicesPaymentsChart,
+    UrgentActions,
+    AnalyticsBreakdown,
+    AnalyticsCircleChart,
+  ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

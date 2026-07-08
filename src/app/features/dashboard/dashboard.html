@@ -5,31 +5,45 @@
       currentMonthValue="0.00%"
       lastMonthValue="0"
       [chartData]="salesProfitData"
-    >
-    </app-metric-card>
-
+    ></app-metric-card>
     <app-metric-card
       title="Sales"
       currentMonthValue="0.00%"
       lastMonthValue="0"
       [chartData]="salesData"
-    >
-    </app-metric-card>
-
+    ></app-metric-card>
     <app-metric-card
       title="Bank Balance"
       currentMonthValue="0.00%"
       lastMonthValue="0"
       [chartData]="bankData"
-    >
-    </app-metric-card>
-
+    ></app-metric-card>
     <app-metric-card
       title="Cash"
       currentMonthValue="0.00%"
       lastMonthValue="0"
       [chartData]="cashData"
-    >
-    </app-metric-card>
+    ></app-metric-card>
+  </section>
+
+  <section class="dashboard-mid-section">
+    <app-invoices-payments-chart></app-invoices-payments-chart>
+    <app-urgent-actions></app-urgent-actions>
+  </section>
+
+  <section class="charts-analytics-row">
+    <div>
+      <app-analytics-circle-chart
+        title="Highest Expenses by Category"
+        [chartLabels]="['Marketing', 'Salaries', 'Rent', 'Utilities', 'Software']"
+        [chartDataValues]="[5000, 12000, 3500, 1200, 2400]"
+      ></app-analytics-circle-chart>
+      <app-analytics-circle-chart
+        title="Most Active Customers"
+        [chartLabels]="['Anas Ahmed', 'Mizan Corp', 'Al-Amal Ltd', 'Yemen Tech', 'Omar Ali']"
+        [chartDataValues]="[45, 38, 32, 28, 15]"
+      ></app-analytics-circle-chart>
+    </div>
+    <app-analytics-breakdown></app-analytics-breakdown>
   </section>
 </div>
