@@ -1,0 +1,28 @@
+<div class="chart-main-container">
+  <div class="chart-header">
+    <div class="chart-title-zone">
+      <h3>Total Invoices vs Total Payments</h3>
+      <p>Last updated:</p>
+    </div>
+    <div class="custom-legend">
+      <span class="legend-item invoices">Invoices</span>
+      <span class="legend-item payments">Payments</span>
+    </div>
+  </div>
+
+  <div class="main-chart-wrapper">
+    <ngx-charts-bar-vertical-2d
+      [results]="chartData"
+      [scheme]="colorScheme"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showGridLines]="showGridLines"
+      [animations]="animations"
+      [yAxisTickFormatting]="yAxisTickFormatting"
+      [barPadding]="4"
+      [groupPadding]="16"
+    >
+    </ngx-charts-bar-vertical-2d>
+  </div>
+</div>
