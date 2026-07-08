@@ -1,0 +1,100 @@
+/* حاوية الحماية لمنع كسر الشاشات الصغيرة وتفعيل السحب الأفقي للجدول فقط */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch; /* سحب ناعم على أجهزة الهواتف */
+}
+
+/* التنسيق الهيكلي للجدول */
+.dynamic-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+/* تنسيق الهيدر */
+.dynamic-data-table th {
+  background-color: #f9fafb; /* لتمييز الرأس عن الجسد */
+  padding: 14px 24px;
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: #4b5563; /* Gray 500 */
+  border-bottom: 1px solid #f3f4f6;
+  white-space: nowrap;
+}
+
+/* تنسيق الخلايا والصفوف */
+.dynamic-data-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151; /* Gray 700 */
+  font-size: 0.7rem;
+  vertical-align: middle;
+}
+
+/* إزالة الخط السفلي لآخر عنصر للحفاظ على النظافة البصرية */
+.dynamic-data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* تأثير تمرير الفأرة على الصفوف لزيادة جودة تجربة المستخدم UX */
+.dynamic-data-table tbody tr:hover td {
+  background-color: #f9fafb;
+}
+
+/* الشارات الملونة الديناميكية (Badges) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* تدرجات ألوان الشارات المستقرة والمريحة للعين */
+.badge-danger {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+.badge-warning {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+.badge-success {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+.badge-default {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* فئات مساعدة لتحسين قراءة النصوص */
+.font-semibold {
+  font-weight: 600;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.text-dark {
+  color: #111827;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+/* تنسيق خلايا الحالات الفارغة */
+.empty-state-cell {
+  text-align: center;
+  padding: 48px 24px !important;
+  color: #6b7280;
+}
+
+.empty-state-content {
+  font-size: 0.938rem;
+  font-weight: 400;
+}

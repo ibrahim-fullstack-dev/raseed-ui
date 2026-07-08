@@ -1,0 +1,55 @@
+<div class="table-responsive-wrapper">
+  <table class="dynamic-data-table">
+    <thead>
+      <tr>
+        @for (col of columns(); track col.key) {
+          <th>{{ col.label }}</th>
+        }
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (row of data(); track row.id || $index) {
+        <tr>
+          @for (col of columns(); track col.key) {
+            <td>
+              @switch (col.type) {
+                @case ('currency') {
+                  <span class="font-semibold text-dark">
+                    {{ row[col.key] | currency }}
+                  </span>
+                }
+
+                @case ('date') {
+                  <span class="whitespace-nowrap">
+                    {{ row[col.key] | date: 'mediumDate' }}
+                  </span>
+                }
+
+                @case ('badge') {
+                  <span class="badge" [class]="'badge-' + (row[col.key]?.style || 'default')">
+                    {{ row[col.key]?.label || row[col.key] }}
+                  </span>
+                }
+
+                @default {
+                  <span [class.font-mono]="col.key === 'invoiceNumber'">
+                    {{ row[col.key] }}
+                  </span>
+                }
+              }
+            </td>
+          }
+        </tr>
+      } @empty {
+        <tr>
+          <td [attr.colspan]="columns().length" class="empty-state-cell">
+            <div class="empty-state-content">
+              <p>{{ emptyMessage() }}</p>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
