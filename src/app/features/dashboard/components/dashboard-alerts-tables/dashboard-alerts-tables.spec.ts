@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardTables } from './dashboard-tables';
+import { DashboardTables } from './dashboard-alerts-tables';
 
 describe('DashboardTables', () => {
   let component: DashboardTables;
