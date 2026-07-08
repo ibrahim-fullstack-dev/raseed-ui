@@ -75,4 +75,52 @@ export class DashboardTables {
       stock: '100',
     },
   ]);
+  protected readonly unpaidSales: TableColumn[] = [
+    { key: 'invoice-number', label: 'Invoice Number', type: 'text' },
+    { key: 'client', label: 'Client', type: 'text' },
+    { key: 'type', label: 'Type', type: 'text' },
+    { key: 'status', label: 'Status', type: 'text' },
+    { key: 'branch', label: 'Branch', type: 'text' },
+    { key: 'warehouse', label: 'Warehouse', type: 'text' },
+    { key: 'price', label: 'Price', type: 'text' },
+  ];
+
+  protected readonly unpaidSalesData = signal([
+    {
+      'invoice-number': 'INV-2026-0082',
+      client: 'Anas Ahmed Trading',
+      type: 'Wholesale',
+      status: 'Unpaid',
+      branch: 'Sanaa Main Branch',
+      warehouse: 'Central Store A',
+      price: 'YR 1,250,000',
+    },
+    {
+      'invoice-number': 'INV-2026-0082',
+      client: 'Mizan Corp LLC',
+      type: 'Retail',
+      status: 'Partially Paid',
+      branch: 'Aden Branch',
+      warehouse: 'Sub-Warehouse B',
+      price: 'YR 450,000',
+    },
+    {
+      'invoice-number': 'INV-2026-0083',
+      client: 'Al-Amal Medical Ltd',
+      type: 'Wholesale',
+      status: 'Unpaid',
+      branch: 'Sanaa Main Branch',
+      warehouse: 'Cold Storage C',
+      price: 'YR 3,100,000',
+    },
+    {
+      'invoice-number': 'INV-2026-0084',
+      client: 'Yemen Tech Solutions',
+      type: 'Retail',
+      status: 'Unpaid',
+      branch: 'Taiz Branch',
+      warehouse: 'Central Store A',
+      price: 'YR 185,000',
+    },
+  ]);
 }

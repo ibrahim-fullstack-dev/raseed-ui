@@ -1,6 +1,7 @@
 .dashboard-tables-grid {
   padding: 24px;
-  display: flex;
+  display: grid;
+  gird-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
 }
 
