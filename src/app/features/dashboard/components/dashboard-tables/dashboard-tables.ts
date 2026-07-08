@@ -6,8 +6,8 @@ import { TableColumn } from '../../../../shared/dynamic-table/dynamic-table.type
   selector: 'app-dashboard-tables',
   standalone: true,
   imports: [DynamicTable], // استيراد الجدول المشترك
-  templateUrl: './dashboard-Alerts-tables.html',
-  styleUrl: './dashboard-Alerts-tables.css',
+  templateUrl: './dashboard-tables.html',
+  styleUrl: './dashboard-tables.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardTables {
