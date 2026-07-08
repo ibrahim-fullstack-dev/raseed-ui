@@ -50,6 +50,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.dashboard-tables-grid {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
 /* =================================================== */
 /* 📱 شاشات التابلت وأجهزة العرض المتوسطة (أصغر من 1024 بكسل) */

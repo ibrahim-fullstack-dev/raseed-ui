@@ -4,6 +4,7 @@ import { InvoicesPaymentsChart } from './components/invoices-payments-chart/invo
 import { UrgentActions } from './components/urgent-actions/urgent-actions';
 import { AnalyticsBreakdown } from './components/analytics-breakdown/analytics-breakdown';
 import { AnalyticsCircleChart } from './components/analytics-circle-chart/analytics-circle-chart';
+import { DashboardTables } from './components/dashboard-tables/dashboard-tables';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,7 @@ import { AnalyticsCircleChart } from './components/analytics-circle-chart/analyt
     UrgentActions,
     AnalyticsBreakdown,
     AnalyticsCircleChart,
+    DashboardTables,
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
