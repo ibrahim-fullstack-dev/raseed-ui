@@ -1,22 +1,60 @@
-<aside class="sidebar" aria-label="sidebar">
-  <div class="sidebar-brand">
-    <h2>Raseed</h2>
+<nav class="sidebar-container" aria-label="Main Enterprise Navigation">
+  <div class="sidebar-header">
+    <span class="brand-logo">📊</span>
+    <h1 class="brand-name">Mizan UI</h1>
   </div>
 
-  <nav class="sidebar-nav">
-    <ul class="nav-list">
-      <li class="nav-item-wrapper">
-        <a
-          [routerLink]="[routes.dashboard]"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active-link"
-          class="nav-item"
-          title="Dashboard"
-        >
-          <lucide-icon name="layout-dashboard"></lucide-icon>
-          <span>Dashboard</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</aside>
+  <ul class="menu-list">
+    @for (item of navigationItems; track item.label) {
+      @if ('children' in item) {
+        <li class="menu-item-wrapper has-children">
+          <button
+            type="button"
+            class="menu-dropdown-trigger"
+            [class.is-expanded]="activeDropdown() === item.label"
+            (click)="toggleDropdown(item.label)"
+            [attr.aria-expanded]="activeDropdown() === item.label"
+            [attr.aria-controls]="'submenu-' + $index"
+          >
+            <div class="trigger-left-content">
+              <lucide-icon [name]="item.icon" class="menu-icon" aria-hidden="true"></lucide-icon>
+              <span class="menu-label">{{ item.label }}</span>
+            </div>
+            <lucide-icon name="chevron-down" class="arrow-icon" aria-hidden="true"></lucide-icon>
+          </button>
+          <ul
+            [id]="'submenu-' + $index"
+            class="submenu-list"
+            [class.is-visible]="activeDropdown() === item.label"
+          >
+            @for (subItem of item.children; track subItem.label) {
+              <li class="submenu-item">
+                <a
+                  [routerLink]="subItem.path"
+                  routerLinkActive="active-sub-link"
+                  class="submenu-link"
+                >
+                  <span class="submenu-dot"></span>
+                  <span class="submenu-label">{{ subItem.label }}</span>
+                </a>
+              </li>
+            }
+          </ul>
+        </li>
+      } @else {
+        <!-- 2. نموذج الرابط المباشر (Direct Route Item) -->
+        <li class="menu-item-wrapper">
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="menu-link"
+          >
+            <lucide-icon [name]="item.icon" class="menu-icon" aria-hidden="true"></lucide-icon>
+            <span class="menu-label">{{ item.label }}</span>
+          </a>
+        </li>
+      }
+    }
+  </ul>
+</nav>

@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
-import { APP_ROUTES } from '../../core/constants/routes.constants';
+
+import { SIDEBAR_NAVIGATION } from './sidebar.constant';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, RouterLinkActive, LucideAngularModule],
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive, LucideAngularModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Sidebar {
-  readonly routes = APP_ROUTES;
+  protected readonly navigationItems = SIDEBAR_NAVIGATION;
+  protected readonly activeDropdown = signal<string | null>(null);
+
+  protected toggleDropdown(label: string): void {
+    this.activeDropdown.update((currentLabel) => (currentLabel === label ? null : label));
+  }
 }

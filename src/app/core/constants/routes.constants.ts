@@ -48,7 +48,7 @@ export const APP_ROUTES = {
   },
 
   // Warehouses & Transfers (Manufacturing)
-  warehouses: {
+  warehouse: {
     root: 'warehouse',
     warehouseProductsLists: 'list',
     importsProducts: 'import',
