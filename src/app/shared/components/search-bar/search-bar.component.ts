@@ -7,12 +7,13 @@ import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { InputComponent } from '../input/input.component';
+import { ButtonComponent } from '../button/button.component';
 import { SearchBarButton } from './search-bar.types';
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, InputComponent],
+  imports: [CommonModule, ReactiveFormsModule, InputComponent, ButtonComponent],
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css'],
 })
