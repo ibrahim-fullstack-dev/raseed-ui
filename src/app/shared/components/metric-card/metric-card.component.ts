@@ -4,8 +4,8 @@ import { LineChartModule } from '@swimlane/ngx-charts';
 @Component({
   selector: 'app-metric-card',
   imports: [LineChartModule],
-  templateUrl: './metric-card.html',
-  styleUrl: './metric-card.css',
+  templateUrl: './metric-card.component.html',
+  styleUrl: './metric-card.component.css',
 })
 export class MetricCard {
   @Input() title: string = '';
