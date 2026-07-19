@@ -27,7 +27,14 @@
   </section>
 
   <section class="dashboard-mid-section">
-    <app-invoices-payments-chart></app-invoices-payments-chart>
+    <div class="chart-wrapper">
+      <app-columns-chart
+        [data]="analyticsData()"
+        [animations]="isAnimated()"
+        [showGridLines]="showGrid()"
+      >
+      </app-columns-chart>
+    </div>
     <app-urgent-actions></app-urgent-actions>
   </section>
 
@@ -47,6 +54,13 @@
     <app-analytics-breakdown></app-analytics-breakdown>
   </section>
   <section class="dashboard-tables-grid">
-    <app-dashboard-tables></app-dashboard-tables>
+    <app-table
+      [data]="clients()"
+      [columns]="tableColumns()"
+      [actions]="tableActions()"
+      (actionClick)="onTableActionTrigger($event)"
+      (selectionChange)="onRowsSelected($event)"
+      [showActions]="false"
+    ></app-table>
   </section>
 </div>

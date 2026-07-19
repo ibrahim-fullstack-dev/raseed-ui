@@ -13,13 +13,14 @@
 
   <!-- 📊 جدول البيانات الديناميكي -->
   <div class="table-container">
-    <app-dynamic-table
+    <app-table
       [columns]="tableColumns()"
       [data]="clientsData()"
       [selectable]="true"
+      [showActions]="true"
       emptyMessage="No clients found matching your criteria."
       (selectionChange)="onClientSelectionChange($event)"
     >
-    </app-dynamic-table>
+    </app-table>
   </div>
 </div>

@@ -1,6 +1,7 @@
 // src/app/shared/components/table/table.component.ts
 
 import { Component, input, output, computed, signal, effect } from '@angular/core';
+import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import {
   TableColumn,
@@ -13,7 +14,7 @@ import {
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
@@ -21,6 +22,8 @@ export class TableComponent {
   data = input<any[]>([]);
   columns = input<TableColumn[]>([]);
   actions = input<TableAction[]>([]);
+  selectable = input<boolean>(false);
+  showActions = input<boolean>(true);
 
   totalItems = input<number>(0);
   pageSize = input<number>(10);

@@ -1,21 +1,24 @@
 import { Component, signal } from '@angular/core';
 import { TopbarComponent } from '../../shared/topbar/topbar.component';
-import { DynamicTable } from '../../shared/dynamic-table/dynamic-table';
-import { TableColumn } from '../../shared/dynamic-table/dynamic-table.types';
+import { TableComponent } from '../../shared/components/table/table.component';
+import {
+  TableColumn,
+  TableAction,
+  TableActionEvent,
+} from '../../shared/components/table/table.types';
 
 @Component({
   selector: 'app-clients',
-  imports: [TopbarComponent, DynamicTable],
+  imports: [TopbarComponent, TableComponent],
   templateUrl: './clients.html',
   styleUrl: './clients.css',
 })
 export class Clients {
   tableColumns = signal<TableColumn[]>([
-    { key: 'name', label: 'Client Name', type: 'text' },
-    { key: 'email', label: 'Email Address', type: 'text' },
-    { key: 'balance', label: 'Total Balance', type: 'currency' },
-    { key: 'joinDate', label: 'Registration Date', type: 'date' },
-    { key: 'status', label: 'Status', type: 'badge' },
+    { key: 'name', label: 'Client Name', sortable: true },
+    { key: 'email', label: 'Email Address', sortable: true },
+    { key: 'balance', label: 'Total Balance', sortable: true },
+    { key: 'joinDate', label: 'Registration Date', sortable: true },
   ]);
   clientsData = signal([
     {
