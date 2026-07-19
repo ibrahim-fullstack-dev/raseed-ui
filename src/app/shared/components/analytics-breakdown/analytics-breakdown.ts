@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Wallet, Users, ReceiptText } from 'lucide-angular';
-import { APP_ROUTES } from '../../../../core/constants/routes.constants';
+import { APP_ROUTES } from '../../../core/constants/routes.constants';
 import { NgClass } from '@angular/common';
 
 @Component({
